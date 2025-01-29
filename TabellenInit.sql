@@ -9,14 +9,14 @@ create table Projekt_Produkt(
 
 create table Projekt_Zulieferer(
     ZuliefererID varchar2(8) primary key,
-    ZulieferName varchar2(50) not null unique,
+    ZuliefererName varchar2(50) not null unique,
     Email varchar2(50) not null unique,
     Telefonnummer varchar2(50) not null unique,
     Ansprechpartner varchar2(50),
-    Straße varchar2(150) not null,
+    Strasse varchar2(150) not null,
     PLZ varchar2(8) not null,
-    Stadt varchar2(30) not null,
-    Land varchar2(10) not null
+    Stadt varchar2(50) not null,
+    Land varchar2(50) not null
 );
 
 create table Projekt_Mitarbeiter(
@@ -54,7 +54,7 @@ create table Projekt_Fuehrungskraft(
 create table Projekt_Firmenstandort(
     FirmenstandortID varchar2(8) primary key,
     StandortName varchar2(15) not null unique,
-    Straße varchar2(150) not null,
+    Strasse varchar2(150) not null,
     PLZ varchar2(8) not null,
     Stadt varchar2(30) not null,
     Rolle varchar(20) check(Rolle in 

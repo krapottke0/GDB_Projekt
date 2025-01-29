@@ -51,9 +51,8 @@ BEGIN
     Projekt_InsertProdukt('TP-Link Deco X20', 179.99, 'PC/Laptop-Zubehör');
     Projekt_InsertProdukt('Xiaomi Mi 11 Ultra', 899.00, 'Handy');
     Projekt_InsertProdukt('Epson EcoTank ET-4760', 599.00, 'Drucker');
+    COMMIT;
 END;
-
-COMMIT;
 
 --select *
 --from PROJEKT_PRODUKT;
