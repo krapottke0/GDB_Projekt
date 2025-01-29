@@ -1,3 +1,4 @@
+--Produkt einpflegen
 CREATE SEQUENCE Projekt_seq_produkt_id
 START WITH 1
 INCREMENT BY 1
@@ -5,7 +6,7 @@ MAXVALUE 9999999
 NOCYCLE
 NOCACHE;
 
---drop SEQUENCE Projekt_seq_produkt_id;
+drop SEQUENCE Projekt_seq_produkt_id;
 
 CREATE OR REPLACE PROCEDURE Projekt_InsertProdukt(
     p_ProduktName IN Projekt_Produkt.ProduktName%type,
@@ -32,7 +33,8 @@ BEGIN
     
 END Projekt_InsertProdukt;
 
-
+------------------------------
+--zulieferer einpflegen
 
 CREATE SEQUENCE Projekt_seq_zulieferer_id
 START WITH 1
@@ -72,3 +74,26 @@ BEGIN
     END;
     
 END Projekt_InsertZulieferer;
+
+------------------------------
+--Lieferung einpflegen
+
+CREATE OR REPLACE PROCEDURE Projekt_InsertLieferung(
+    l_ProduktID IN Projekt_Liefert.ProduktID%type,
+    l_ZuliefererID IN Projekt_Liefert.ZuliefererID%type,
+    l_Anzahl IN Projekt_Liefert.Anzahl%type,
+    l_PreisProStueck IN Projekt_Liefert.PreisProStueck%type
+)
+IS
+BEGIN
+    BEGIN
+        INSERT INTO PROJEKT_LIEFERT (PRODUKTID, ZuliefererID, ANZAHL, PREISPROSTUECK)
+        VALUES (l_ProduktID,l_ZuliefererID, l_Anzahl, l_PreisProStueck);
+        DBMS_OUTPUT.PUT_LINE('Lieferung erfolgreich eingefügt.');
+        
+    EXCEPTION
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE('Fehler beim Einfügen der Lieferung: ' || SQLERRM);
+    END;
+    
+END Projekt_InsertLieferung;
