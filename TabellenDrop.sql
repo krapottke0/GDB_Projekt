@@ -1,0 +1,12 @@
+drop table Projekt_Beinhaltet cascade constraints;
+drop table Projekt_Liefert cascade constraints;
+drop table Projekt_Lagert cascade constraints;
+drop table Projekt_Verkauf cascade constraints;
+drop table Projekt_Filiale cascade constraints;
+drop table Projekt_Warenlager cascade constraints;
+drop table Projekt_Firmenstandort cascade constraints;
+drop table Projekt_Fuehrungskraft cascade constraints;
+drop table Projekt_Warenlagermitarbeiter cascade constraints;
+drop table Projekt_Mitarbeiter cascade constraints;
+drop table Projekt_Zulieferer cascade constraints;
+drop table Projekt_Produkt cascade constraints;
