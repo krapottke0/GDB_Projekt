@@ -86,7 +86,7 @@ create table Verkauf(
     Zeitpunkt date not null,
     Gesamtpreis decimal(12,2) not null check(GesamtPreis >= 0),
     Verkaufsort varchar2(8) not null,
-    foreign key Verkaufsort references Filiale(FirmenstandortID)
+    foreign key (Verkaufsort) references Filiale(FirmenstandortID)
 )
 
 create table Liefert(
@@ -95,8 +95,8 @@ create table Liefert(
     Anzahl integer not null check(Anzahl > 0),
     PreisProStueck decimal(8, 2) not null check(PreisProStueck >= 0),
     primary key (ProduktID, ZuliefererID),
-    foreign key ProduktID references Produkt,
-    foreign key ZuliefererID references Zulieferer
+    foreign key (ProduktID) references Produkt,
+    foreign key (ZuliefererID) references Zulieferer
 )
 
 create table Beinhaltet(
@@ -104,8 +104,8 @@ create table Beinhaltet(
     ProduktID varchar2(8),
     Anzahl integer not null check(Anzahl > 0),
     primary key (VerkaufsID, ProduktID),
-    foreign key VerkaufsID references Verkauf,
-    foreign key ProduktID references Produkt
+    foreign key (VerkaufsID) references Verkauf,
+    foreign key (ProduktID) references Produkt
 )
 
 create table Lagert(
@@ -121,4 +121,4 @@ create table Lagert(
 --nachträgliche Fremdschlüsseldeklaration die oben angekündigt wurde
 
 alter table Mitarbeiter
-add constraint fk_nachtraeglich_Mitarbeiter-Arbeitsort foreign key (Arbeitsort) references Firmenstandort(FirmenstandortID)
+add constraint fk_nachtraeglich_Mitarbeiter_Arbeitsort foreign key (Arbeitsort) references Firmenstandort(FirmenstandortID)
