@@ -21,6 +21,7 @@ BEGIN
     Projekt_InsertZulieferer('Harman Kardon', 'info@harman.de', '0800-889900', 'Thomas Becker', 'Harman Straße 21', '34569', 'Berlin', 'Deutschland');
     Projekt_InsertZulieferer('Brother Deutschland', 'service@brother.de', '0800-112277', 'Petra Hoffmann', 'Brother Platz 22', '56791', 'Frankfurt', 'Deutschland');
     Projekt_InsertZulieferer('Xiaomi Deutschland', 'contact@xiaomi.de', '0800-998811', 'Florian Meier', 'Xiaomi Allee 23', '67892', 'München', 'Deutschland');
+    Projekt_InsertZulieferer('Anker GMBH', 'contact@anker.de', '0800-998821', 'Peter Arnold', 'Anker Platz 3', '67892', 'München', 'Deutschland');
     COMMIT;
 END;
 
@@ -28,3 +29,4 @@ END;
 --from PROJEKT_Zulieferer;
 
 --DELETE PROJEKT_Zulieferer;
+--DELETE PROJEKT_LIEFERT;
