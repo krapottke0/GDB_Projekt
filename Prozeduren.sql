@@ -107,13 +107,41 @@ CREATE OR REPLACE PROCEDURE Projekt_InsertMitarbeiter(
     m_MitarbeiterAnsDatum IN Projekt_Mitarbeiter.AnsDatum%TYPE,
     m_MitarbeiterRolle IN Projekt_Mitarbeiter.Rolle%TYPE,
     m_MitarbeiterWStunden IN Projekt_Mitarbeiter.WStunden%TYPE,
-    m_MitarbeiterKTage IN Projekt_Mitarbeiter.Ktage%TYPE,
-    m_MitarbeiterArbeitsort IN Projekt_Mitarbeiter.Arbeitsort%TYPE
-
+    m_MitarbeiterKTage IN Projekt_Mitarbeiter.KTage%TYPE,
+    m_MitarbeiterArbeitsort IN Projekt_Mitarbeiter.Arbeitsort%TYPE,
     
+    -- Zusätzliche Parameter für Führungskraft
+    m_BDatum IN Projekt_Fuehrungskraft.BDatum%TYPE DEFAULT NULL,
+    m_FEbene IN Projekt_Fuehrungskraft.FEbene%TYPE DEFAULT NULL,
+
+    -- Zusätzliche Parameter für Warenlagermitarbeiter
+    m_GabelstaplerS IN Projekt_Warenlagermitarbeiter.GabelstaplerS%TYPE DEFAULT NULL,
+    m_letzteUnterw IN Projekt_Warenlagermitarbeiter.letzteUnterw%TYPE DEFAULT NULL,
+    m_LkwS IN Projekt_Warenlagermitarbeiter.LkwS%TYPE DEFAULT NULL
 )
 IS
+    v_MitarbeiterID Projekt_Mitarbeiter.MitarbeiterID%TYPE;
 BEGIN
+    -- Generiere eine eindeutige ID für den neuen Mitarbeiter (hier einfach ein Zeitstempel als String)
+    v_MitarbeiterID := TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS');
 
-END;
+    -- Einfügen in Projekt_Mitarbeiter
+    INSERT INTO Projekt_Mitarbeiter (MitarbeiterID, Nachname, Vorname, Gehalt, GebDatum, AnsDatum, Rolle, WStunden, KTage, Arbeitsort) 
+    VALUES (
+        v_MitarbeiterID, m_MitarbeiterNachname, m_MitarbeiterVorname, m_MitarbeiterGehalt, 
+        m_MitarbeiterGebDatum, m_MitarbeiterAnsDatum, m_MitarbeiterRolle, 
+        m_MitarbeiterWStunden, m_MitarbeiterKTage, m_MitarbeiterArbeitsort
+    );
+
+    -- Falls der Mitarbeiter eine Führungskraft ist, auch in die Führungskraft-Tabelle eintragen
+    IF m_MitarbeiterRolle = 'Führungskraft' THEN
+        INSERT INTO Projekt_Fuehrungskraft (MitarbeiterID, BDatum, FEbene) 
+        VALUES (v_MitarbeiterID, m_BDatum, m_FEbene);
+    ELSIF m_MitarbeiterRolle = 'Warenlagermitarbeiter' THEN
+        -- Falls der Mitarbeiter ein Warenlagermitarbeiter ist, in die Warenlagermitarbeiter-Tabelle eintragen
+        INSERT INTO Projekt_Warenlagermitarbeiter (MitarbeiterID, GabelstaplerS, letzteUnterw, LkwS) 
+        VALUES (v_MitarbeiterID, m_GabelstaplerS, m_letzteUnterw, m_LkwS);
+    END IF;
+
+    COMMIT;
 END Projekt_InsertMitarbeiter;
