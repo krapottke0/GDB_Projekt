@@ -60,7 +60,7 @@ create table Projekt_Firmenstandort(
     Rolle varchar(20) check(Rolle in 
         ('Filiale', 'Warenlager', 'Hauptsitz', 'Filiallager')
     ),
-    Leiter varchar2(8) not null,
+    Leiter varchar2(8),
     foreign key (Leiter) references Projekt_Fuehrungskraft(MitarbeiterID)
 );
 
