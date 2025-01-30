@@ -142,15 +142,16 @@ BEGIN
     VALUES (
         v_MitarbeiterID, m_MitarbeiterNachname, m_MitarbeiterVorname, m_MitarbeiterGehalt, 
         m_MitarbeiterGebDatum, m_MitarbeiterAnsDatum, m_MitarbeiterRolle, 
-        m_MitarbeiterWStunden, m_MitarbeiterKTage, m_MitarbeiterArbeitsort
+        m_MitarbeiterWStunden, m_MitarbeiterKTage, m_MitarbeiterArbeitsort  
     );
-
     IF m_MitarbeiterRolle = 'Führungskraft' THEN
         INSERT INTO Projekt_Fuehrungskraft (MitarbeiterID, BDatum, FEbene) 
         VALUES (v_MitarbeiterID, m_BDatum, m_FEbene);
+        DBMS_OUTPUT.PUT_LINE('Führungskraft erfolgreich eingefügt.');
     ELSIF m_MitarbeiterRolle = 'Warenlagermitarbeiter' THEN
         INSERT INTO Projekt_Warenlagermitarbeiter (MitarbeiterID, GabelstaplerS, letzteUnterw, LkwS) 
         VALUES (v_MitarbeiterID, m_GabelstaplerS, m_letzteUnterw, m_LkwS);
+        DBMS_OUTPUT.PUT_LINE('Warenlagermitarbeiter erfolgreich eingefügt.');
     END IF;
 
 END Projekt_InsertMitarbeiter;
