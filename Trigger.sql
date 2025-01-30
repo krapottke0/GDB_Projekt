@@ -2,11 +2,11 @@ CREATE OR REPLACE TRIGGER after_verkauf_insert
 AFTER INSERT ON Verkauf
 FOR EACH ROW
 DECLARE
-    v_FirmenstandortID VARCHAR2(8);  -- Variable für die Firmenstandort-ID
-    v_ProduktID VARCHAR2(8);         -- Variable für die Produkt-ID
-    v_Menge NUMBER(38.0);            -- Variable für die Menge
-    v_Lagert_ID VARCHAR2(8);         -- Variable für die Lagert-ID
-    v_ANGWARENLAGER VARCHAR2(8);     -- Variable für ANGWARENLAGER
+    v_FirmenstandortID Firmenstandort.FirmenstandortID%TYPE;  -- Variable für die Firmenstandort-ID
+    v_ProduktID ProduktID.ProduktID%TYPE;         -- Variable für die Produkt-ID
+    v_Menge PROJEKT_BEINHALTET.Anzahl%TYPE;            -- Variable für die Menge
+    v_Lagert_ID PROJEKT_LAGER.Lagerort%TYPE;         -- Variable für die Lagert-ID
+    v_ANGWARENLAGER PROJEKT_Filiale.ANGWARENLAGER%type;     -- Variable für ANGWARENLAGER
 BEGIN
     -- Verkaufsort ist gleich der FirmenstandortID in der Filiale-Tabelle
     v_FirmenstandortID := :NEW.Verkaufsort;
@@ -15,7 +15,7 @@ BEGIN
     v_ProduktID := :NEW.ProduktID;
 
     -- Menge aus der VerkaufDetails-Tabelle holen, basierend auf der VerkaufsID
-    SELECT Menge
+    SELECT ANZAHL
     INTO v_Menge
     FROM PROJEKT_BEINHALTET
     WHERE VerkaufsID = :NEW.VerkaufsID;  -- Hier mit der VerkaufsID verknüpfen
