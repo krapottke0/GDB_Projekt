@@ -29,16 +29,16 @@ values ('F_EL0003', 'Externe Lager 3', 'Lagerstr. 3', '55555', 'Leipzig', 'Waren
 
 --Filial Lager
 insert into Projekt_Firmenstandort (FirmenstandortID, StandortName, Strasse, PLZ, Stadt, Rolle)
-values ('F_FL0001', 'Filiallager 1', 'Lagerstr. 1a', '66666', 'Hamburg', 'Filiallager');
+values ('F_FL0001', 'Filiallager 1', 'Filialstr. 10', '54321', 'Hamburg', 'Filiallager');
 
 insert into Projekt_Firmenstandort (FirmenstandortID, StandortName, Strasse, PLZ, Stadt, Rolle)
-values ('F_FL0002', 'Filiallager 2', 'Lagerstr. 2a', '77777', 'München', 'Filiallager');
+values ('F_FL0002', 'Filiallager 2', 'Filialstr. 20', '98765', 'München', 'Filiallager');
 
 insert into Projekt_Firmenstandort (FirmenstandortID, StandortName, Strasse, PLZ, Stadt, Rolle)
-values ('F_FL0003', 'Filiallager 3', 'Lagerstr. 3a', '88888', 'Köln', 'Filiallager');
+values ('F_FL0003', 'Filiallager 3', 'Filialstr. 30', '11111', 'Köln', 'Filiallager');
 
 insert into Projekt_Firmenstandort (FirmenstandortID, StandortName, Strasse, PLZ, Stadt, Rolle)
-values ('F_FL0004', 'Filiallager 4', 'Lagerstr. 4a', '99999', 'Frankfurt', 'Filiallager');
+values ('F_FL0004', 'Filiallager 4', 'Filialstr. 40', '22222', 'Frankfurt', 'Filiallager');
 
 
 -- Einfügen von Beispieldaten in Projekt_Warenlager
@@ -66,13 +66,19 @@ values ('F_FL0004', 800.00, 800.00, 4);
 
 -- Einfügen von Beispieldaten in Projekt_Filiale
 insert into Projekt_Filiale (FirmenstandortID, Umsatz, Inventur, angWarenlager)
-values ('F_FI0001', 500000.00, 80.00, 'S006');
+values ('F_FI0001', 500000.00, 80.00, 'F_FL0001');
 
 insert into Projekt_Filiale (FirmenstandortID, Umsatz, Inventur, angWarenlager)
-values ('F_FI0002', 450000.00, 75.00, 'S007');
+values ('F_FI0002', 450000.00, 75.00, 'F_FL0001');
 
 insert into Projekt_Filiale (FirmenstandortID, Umsatz, Inventur, angWarenlager)
-values ('F_FI0003', 600000.00, 70.00, 'S008');
+values ('F_FI0003', 600000.00, 70.00, 'F_FL0001');
 
 insert into Projekt_Filiale (FirmenstandortID, Umsatz, Inventur, angWarenlager)
-values ('F_FI0004', 550000.00, 65.00, 'S006');
+values ('F_FI0004', 550000.00, 65.00, 'F_FL0001');
+
+commit;
+
+--delete PROJEKT_FILIALE;
+--delete Projekt_Warenlager;
+--delete PROJEKT_FIRMENSTANDORT;
