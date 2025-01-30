@@ -102,6 +102,15 @@ END Projekt_InsertLieferung;
 ------------------------------
 --Mitarbeiter einpflegen
 
+CREATE SEQUENCE Projekt_seq_mitarbeiter_id
+START WITH 1
+INCREMENT BY 1
+MAXVALUE 9999999
+NOCYCLE
+NOCACHE;
+
+drop SEQUENCE Projekt_seq_mitarbeiter_id;
+
 CREATE OR REPLACE PROCEDURE Projekt_InsertMitarbeiter(
     m_MitarbeiterNachname IN Projekt_Mitarbeiter.Nachname%TYPE,
     m_MitarbeiterVorname IN Projekt_Mitarbeiter.Vorname%TYPE,
@@ -125,26 +134,24 @@ CREATE OR REPLACE PROCEDURE Projekt_InsertMitarbeiter(
 IS
     v_MitarbeiterID Projekt_Mitarbeiter.MitarbeiterID%TYPE;
 BEGIN
-    -- Generiere eine eindeutige ID für den neuen Mitarbeiter (hier einfach ein Zeitstempel als String)
-    v_MitarbeiterID := TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS');
+    SELECT 'M' || TO_CHAR(Projekt_seq_mitarbeiter_id.NEXTVAL, 'FM0000000') 
+    INTO  v_MitarbeiterID 
+    FROM dual;
 
-    -- Einfügen in Projekt_Mitarbeiter
     INSERT INTO Projekt_Mitarbeiter (MitarbeiterID, Nachname, Vorname, Gehalt, GebDatum, AnsDatum, Rolle, WStunden, KTage, Arbeitsort) 
     VALUES (
         v_MitarbeiterID, m_MitarbeiterNachname, m_MitarbeiterVorname, m_MitarbeiterGehalt, 
         m_MitarbeiterGebDatum, m_MitarbeiterAnsDatum, m_MitarbeiterRolle, 
-        m_MitarbeiterWStunden, m_MitarbeiterKTage, m_MitarbeiterArbeitsort
+        m_MitarbeiterWStunden, m_MitarbeiterKTage, m_MitarbeiterArbeitsort  
     );
-
-    -- Falls der Mitarbeiter eine Führungskraft ist, auch in die Führungskraft-Tabelle eintragen
     IF m_MitarbeiterRolle = 'Führungskraft' THEN
         INSERT INTO Projekt_Fuehrungskraft (MitarbeiterID, BDatum, FEbene) 
         VALUES (v_MitarbeiterID, m_BDatum, m_FEbene);
+        DBMS_OUTPUT.PUT_LINE('Führungskraft erfolgreich eingefügt.');
     ELSIF m_MitarbeiterRolle = 'Warenlagermitarbeiter' THEN
-        -- Falls der Mitarbeiter ein Warenlagermitarbeiter ist, in die Warenlagermitarbeiter-Tabelle eintragen
         INSERT INTO Projekt_Warenlagermitarbeiter (MitarbeiterID, GabelstaplerS, letzteUnterw, LkwS) 
         VALUES (v_MitarbeiterID, m_GabelstaplerS, m_letzteUnterw, m_LkwS);
+        DBMS_OUTPUT.PUT_LINE('Warenlagermitarbeiter erfolgreich eingefügt.');
     END IF;
 
-    COMMIT;
 END Projekt_InsertMitarbeiter;

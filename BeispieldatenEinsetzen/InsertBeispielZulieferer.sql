@@ -18,10 +18,15 @@ BEGIN
     Projekt_InsertZulieferer('Huawei Consumer Business', 'consumer@huawei.com', '0800-443388', 'Michael Schwarz', 'Huawei Str. 18', '89013', 'Frankfurt', 'Deutschland');
     Projekt_InsertZulieferer('Sony Corporation', 'info@sony.de', '0800-667789', 'Stefan Peters', 'Sony Allee 19', '90124', 'Hamburg', 'Deutschland');
     Projekt_InsertZulieferer('TP-Link Deutschland', 'support@tp-link.de', '0800-778899', 'Franz Schmidt', 'TP-Link Str. 20', '01235', 'München', 'Deutschland');
-    Projekt_InsertZulieferer('Harman Kardon', 'info@harman.de', '0800-889900', 'Thomas Becker', 'Harman Straße 21', '34569', 'Berlin', 'Deutschland');
-    Projekt_InsertZulieferer('Brother Deutschland', 'service@brother.de', '0800-112277', 'Petra Hoffmann', 'Brother Platz 22', '56791', 'Frankfurt', 'Deutschland');
-    Projekt_InsertZulieferer('Xiaomi Deutschland', 'contact@xiaomi.de', '0800-998811', 'Florian Meier', 'Xiaomi Allee 23', '67892', 'München', 'Deutschland');
+    Projekt_InsertZulieferer('Asus', 'contact@asus.de', '0800-498821', 'Hans Tauer', 'Asus Straße 35', '67692', 'Freiburg', 'Deutschland');
     Projekt_InsertZulieferer('Anker GMBH', 'contact@anker.de', '0800-998821', 'Peter Arnold', 'Anker Platz 3', '67892', 'München', 'Deutschland');
+    Projekt_InsertZulieferer('Xiaomi Deutschland', 'contact@xiaomi.de', '0800-998811', 'Florian Meier', 'Xiaomi Allee 23', '67892', 'München', 'Deutschland');
+    Projekt_InsertZulieferer('Brother Deutschland', 'service@brother.de', '0800-112277', 'Petra Hoffmann', 'Brother Platz 22', '56791', 'Frankfurt', 'Deutschland');
+    Projekt_InsertZulieferer('Cosair', 'contacte@cosair.de', '0800-112457', 'Petra Maarfeld', 'Cosair Straße 22', '46791', 'Köln', 'Deutschland');   
+    Projekt_InsertZulieferer('LG Electronics', 'service@lgelectronics.de', '0800-312277', 'Gustav Hein', 'LG Allee 22', '56591', 'Frankfurt', 'Deutschland');
+    Projekt_InsertZulieferer('Brother Deutschland', 'service@brother.de', '0800-112277', 'Petra Hoffmann', 'Brother Platz 22', '56791', 'Frankfurt', 'Deutschland');
+    Projekt_InsertZulieferer('Google', 'service@google.com', '0800-112567', 'Arnold Peters', 'Google Platz 42', '01235', 'München', 'Deutschland');
+    Projekt_InsertZulieferer('Garmin', 'service@garmin.com', '0800-292567', 'Rudolf Garmin', 'Garmin Straße 12', '01235', 'München', 'Deutschland');
     COMMIT;
 END;
 
