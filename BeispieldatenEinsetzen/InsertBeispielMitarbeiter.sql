@@ -52,93 +52,162 @@ BEGIN
     
     -- Einfügen von vier Leitern Filiale
     Projekt_InsertMitarbeiter('Müller','Erika',4500.00,TO_DATE('1980-04-25', 'YYYY-MM-DD'),TO_DATE('2010-08-01', 'YYYY-MM-DD'),'Führungskraft',40,30,'F_FI0001',
-    TO_DATE('2010-08-01', 'YYYY-MM-DD'), 'Leiter Filiale');
+    TO_DATE('2010-08-01', 'YYYY-MM-DD'), 'Leiter Filiale', 'F_FI0001');
     Projekt_InsertMitarbeiter('Schmidt','Thomas',5000.00,TO_DATE('1975-09-10', 'YYYY-MM-DD'),TO_DATE('2012-01-15', 'YYYY-MM-DD'),'Führungskraft',40,30,'F_FI0002',
-    TO_DATE('2012-01-15', 'YYYY-MM-DD'), 'Leiter Filiale');
+    TO_DATE('2012-01-15', 'YYYY-MM-DD'), 'Leiter Filiale', 'F_FI0002');
     Projekt_InsertMitarbeiter('Klein','Anna',4800.00,TO_DATE('1982-07-05', 'YYYY-MM-DD'),TO_DATE('2013-06-10', 'YYYY-MM-DD'),'Führungskraft',40,30,'F_FI0003',
-    TO_DATE('2013-06-10', 'YYYY-MM-DD'), 'Leiter Filiale');
+    TO_DATE('2013-06-10', 'YYYY-MM-DD'), 'Leiter Filiale', 'F_FI0003');
     Projekt_InsertMitarbeiter('Schwarz','Peter',4700.00,TO_DATE('1983-03-12', 'YYYY-MM-DD'),TO_DATE('2014-04-22', 'YYYY-MM-DD'),'Führungskraft',40,30,'F_FI0004',
-    TO_DATE('2014-04-22', 'YYYY-MM-DD'), 'Leiter Filiale');
+    TO_DATE('2014-04-22', 'YYYY-MM-DD'), 'Leiter Filiale', 'F_FI0004');
 
     -- Mitarbeiter für Lager 1 (F_EL0001)
     Projekt_InsertMitarbeiter('Richter','Mia',2100.00,TO_DATE('1991-12-01', 'YYYY-MM-DD'),TO_DATE('2019-05-14', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,22,'F_EL0001',
-    NULL, NULL, 'T', TO_DATE('2019-05-14', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2019-05-14', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Schulz','Hannah',2200.00,TO_DATE('1993-04-18', 'YYYY-MM-DD'),TO_DATE('2021-01-02', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,23,'F_EL0001',
-    NULL, NULL, 'T', TO_DATE('2021-01-02', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2021-01-02', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Zimmermann','Ines',2300.00,TO_DATE('1990-05-10', 'YYYY-MM-DD'),TO_DATE('2020-07-01', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,24,'F_EL0001', 
-    NULL, NULL, 'T', TO_DATE('2020-07-01', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2020-07-01', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Lang','Jörg',2400.00,TO_DATE('1987-06-05', 'YYYY-MM-DD'),TO_DATE('2019-10-30', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,25,'F_EL0001', 
-    NULL, NULL, 'T', TO_DATE('2019-10-30', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2019-10-30', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Weber','Felix',2200.00,TO_DATE('1990-12-12', 'YYYY-MM-DD'),TO_DATE('2021-03-01', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,26,'F_EL0001', 
-    NULL, NULL, 'T', TO_DATE('2021-03-01', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2021-03-01', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Hoffmann','Gabi',2100.00,TO_DATE('1994-01-08', 'YYYY-MM-DD'),TO_DATE('2020-11-15', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,22,'F_EL0001', 
-    NULL, NULL, 'T', TO_DATE('2020-11-15', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2020-11-15', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Schulze','Vera',2300.00,TO_DATE('1989-03-30', 'YYYY-MM-DD'),TO_DATE('2021-02-14', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,23,'F_EL0001', 
-    NULL, NULL, 'T', TO_DATE('2021-02-14', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2021-02-14', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Peters','Walter',2400.00,TO_DATE('1987-11-22', 'YYYY-MM-DD'),TO_DATE('2019-05-30', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,24,'F_EL0001', 
-    NULL, NULL, 'T', TO_DATE('2019-05-30', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2019-05-30', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Jäger','Xenia',2500.00,TO_DATE('1991-10-14', 'YYYY-MM-DD'),TO_DATE('2021-04-15', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,25,'F_EL0001', 
-    NULL, NULL, 'T', TO_DATE('2021-04-15', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2021-04-15', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Feldmann','Yvonne',2600.00,TO_DATE('1990-01-18', 'YYYY-MM-DD'),TO_DATE('2019-08-30', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,26,'F_EL0001', 
-    NULL, NULL, 'T', TO_DATE('2019-08-30', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2019-08-30', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Götz','Elisabeth',2700.00,TO_DATE('1990-05-25', 'YYYY-MM-DD'),TO_DATE('2021-05-21', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,26,'F_EL0003', 
-    NULL, NULL, 'T', TO_DATE('2021-05-21', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL,'T', TO_DATE('2021-05-21', 'YYYY-MM-DD'), 'CE');
 
     -- Mitarbeiter für Lager 2 (F_EL0002)
     Projekt_InsertMitarbeiter('Schmidt','Clara',2200.00,TO_DATE('1993-02-10', 'YYYY-MM-DD'),TO_DATE('2020-12-01', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,22,'F_EL0002', 
-    NULL, NULL, 'T', TO_DATE('2020-12-01', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2020-12-01', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Fischer','Eva',2300.00,TO_DATE('1992-07-17', 'YYYY-MM-DD'),TO_DATE('2021-10-15', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,23,'F_EL0002', 
-    NULL, NULL, 'T', TO_DATE('2021-10-15', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2021-10-15', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Schneider','David',2400.00,TO_DATE('1988-11-25', 'YYYY-MM-DD'),TO_DATE('2020-09-05', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,24,'F_EL0002', 
-    NULL, NULL, 'T', TO_DATE('2020-09-05', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2020-09-05', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Müller','Stefan',2500.00,TO_DATE('1990-09-10', 'YYYY-MM-DD'),TO_DATE('2021-02-20', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,25,'F_EL0002', 
-    NULL, NULL, 'T', TO_DATE('2021-02-20', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2021-02-20', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Graf','Ursula',2200.00,TO_DATE('1988-01-14', 'YYYY-MM-DD'),TO_DATE('2021-04-10', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,26,'F_EL0002', 
-    NULL, NULL, 'T', TO_DATE('2021-04-10', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2021-04-10', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Koch','Oliver',2400.00,TO_DATE('1987-10-25', 'YYYY-MM-DD'),TO_DATE('2020-06-30', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,24,'F_EL0002', 
-    NULL, NULL, 'T', TO_DATE('2020-06-30', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2020-06-30', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Schwarz','Paul',2500.00,TO_DATE('1992-11-18', 'YYYY-MM-DD'),TO_DATE('2021-01-20', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,25,'F_EL0002', 
-    NULL, NULL, 'T', TO_DATE('2021-01-20', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2021-01-20', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Schuster','Rita',2600.00,TO_DATE('1994-03-02', 'YYYY-MM-DD'),TO_DATE('2021-02-05', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,26,'F_EL0002', 
-    NULL, NULL, 'T', TO_DATE('2021-02-05', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2021-02-05', 'YYYY-MM-DD'), 'CE');
 
     -- Mitarbeiter für Lager 3 (F_EL0003)
     Projekt_InsertMitarbeiter('Schulze','Vera',2200.00,TO_DATE('1989-03-30', 'YYYY-MM-DD'),TO_DATE('2020-08-05', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,22,'F_EL0003', 
-    NULL, NULL, 'T', TO_DATE('2020-08-05', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2020-08-05', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Peters','Walter',2300.00,TO_DATE('1987-11-22', 'YYYY-MM-DD'),TO_DATE('2019-12-02', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,23,'F_EL0003', 
-    NULL, NULL, 'T', TO_DATE('2019-12-02', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2019-12-02', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Jäger','Xenia',2400.00,TO_DATE('1991-10-14', 'YYYY-MM-DD'),TO_DATE('2020-04-08', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,24,'F_EL0003', 
-    NULL, NULL, 'T', TO_DATE('2020-04-08', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2020-04-08', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Feldmann','Yvonne',2500.00,TO_DATE('1990-01-18', 'YYYY-MM-DD'),TO_DATE('2019-09-11', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,25,'F_EL0003', 
-    NULL, NULL, 'T', TO_DATE('2019-09-11', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2019-09-11', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Hennig','Zacharias',2200.00,TO_DATE('1986-12-03', 'YYYY-MM-DD'),TO_DATE('2020-10-15', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,26,'F_EL0003', 
-    NULL, NULL, 'T', TO_DATE('2020-10-15', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2020-10-15', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Kaiser','Albert',2300.00,TO_DATE('1993-07-09', 'YYYY-MM-DD'),TO_DATE('2021-02-19', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,22,'F_EL0003', 
-    NULL, NULL, 'T', TO_DATE('2021-02-19', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2021-02-19', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Neumann','Brigitte',2400.00,TO_DATE('1991-06-06', 'YYYY-MM-DD'),TO_DATE('2020-12-22', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,23,'F_EL0003', 
-    NULL, NULL, 'T', TO_DATE('2020-12-22', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2020-12-22', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Lorenz','Carla',2500.00,TO_DATE('1988-04-19', 'YYYY-MM-DD'),TO_DATE('2019-11-25', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,24,'F_EL0003', 
-    NULL, NULL, 'T', TO_DATE('2019-11-25', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2019-11-25', 'YYYY-MM-DD'), 'CE');
     Projekt_InsertMitarbeiter('Heinrich','Diana',2600.00,TO_DATE('1989-08-17', 'YYYY-MM-DD'),TO_DATE('2020-08-30', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,25,'F_EL0003', 
-    NULL, NULL, 'T', TO_DATE('2020-08-30', 'YYYY-MM-DD'), 'CE');
+    NULL, NULL, NULL, 'T', TO_DATE('2020-08-30', 'YYYY-MM-DD'), 'CE');
+
+    -- Verwalter und Mitarbeiter für die angeschlossenen Warenlager
+    Projekt_InsertMitarbeiter('Schulz','Stefan',3500.00,TO_DATE('1985-07-10', 'YYYY-MM-DD'),TO_DATE('2021-06-01', 'YYYY-MM-DD'),'Führungskraft',40,28,'F_FL0001',
+    TO_DATE('2021-06-01', 'YYYY-MM-DD'), 'Verwalter Warenlager', 'F_FL0001');
+    Projekt_InsertMitarbeiter('Meier','Klara',2500.00,TO_DATE('1990-05-22', 'YYYY-MM-DD'),TO_DATE('2018-04-20', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,24,'F_FL0001', 
+    NULL, NULL, NULL, 'T', TO_DATE('2018-04-20', 'YYYY-MM-DD'), 'CE');
+    Projekt_InsertMitarbeiter('Schneider','Tom',2600.00,TO_DATE('1987-11-30', 'YYYY-MM-DD'),TO_DATE('2020-03-15', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,25,'F_FL0001', 
+    NULL, NULL, NULL, 'T', TO_DATE('2020-03-15', 'YYYY-MM-DD'), 'CE');
+    Projekt_InsertMitarbeiter('Zimmermann','Lena',2500.00,TO_DATE('1992-01-12', 'YYYY-MM-DD'),TO_DATE('2017-07-09', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,24,'F_FL0001', 
+    NULL, NULL, NULL, 'T', TO_DATE('2017-07-09', 'YYYY-MM-DD'), 'CE');
+    Projekt_InsertMitarbeiter('Fischer','Sophie',2600.00,TO_DATE('1991-10-25', 'YYYY-MM-DD'),TO_DATE('2020-01-18', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,25,'F_FL0001', 
+    NULL, NULL, NULL, 'T', TO_DATE('2020-01-18', 'YYYY-MM-DD'), 'CE');
+
+    -- Mitarbeiter für Lager 2 (F_FL0002)
+    Projekt_InsertMitarbeiter('Schmidt','Julia',3500.00,TO_DATE('1985-08-15', 'YYYY-MM-DD'),TO_DATE('2021-06-15', 'YYYY-MM-DD'),'Führungskraft',40,28,'F_FL0002',
+    TO_DATE('2021-06-15', 'YYYY-MM-DD'), 'Verwalter Warenlager', 'F_FL0002');
+    Projekt_InsertMitarbeiter('Lange','Anna',2500.00,TO_DATE('1990-04-12', 'YYYY-MM-DD'),TO_DATE('2017-11-30', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,24,'F_FL0002',
+    NULL, NULL, NULL, 'T', TO_DATE('2017-11-30', 'YYYY-MM-DD'), 'CE');
+    Projekt_InsertMitarbeiter('Becker','Karl',2600.00,TO_DATE('1989-05-28', 'YYYY-MM-DD'),TO_DATE('2020-02-28', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,25,'F_FL0002',
+    NULL, NULL, NULL, 'T', TO_DATE('2020-02-28', 'YYYY-MM-DD'), 'CE');
+    Projekt_InsertMitarbeiter('Meyer','Hannah',2500.00,TO_DATE('1992-09-10', 'YYYY-MM-DD'),TO_DATE('2019-06-12', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,24,'F_FL0002',
+    NULL, NULL, NULL, 'T', TO_DATE('2019-06-12', 'YYYY-MM-DD'), 'CE');
+    Projekt_InsertMitarbeiter('Schulze','Max',2600.00,TO_DATE('1991-02-07', 'YYYY-MM-DD'),TO_DATE('2020-04-15', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,25,'F_FL0002',
+    NULL, NULL, NULL, 'T', TO_DATE('2020-04-15', 'YYYY-MM-DD'), 'CE');
+    
+    -- Mitarbeiter für Lager 3 (F_FL0003)
+    Projekt_InsertMitarbeiter('Klein','Erika',3500.00,TO_DATE('1984-12-02', 'YYYY-MM-DD'),TO_DATE('2021-07-10', 'YYYY-MM-DD'),'Führungskraft',40,28,'F_FL0003',
+    TO_DATE('2021-07-10', 'YYYY-MM-DD'), 'Verwalter Warenlager', 'F_FL0003');
+    Projekt_InsertMitarbeiter('Friedrich','Clara',2500.00,TO_DATE('1991-02-22', 'YYYY-MM-DD'),TO_DATE('2018-12-15', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,24,'F_FL0003',
+    NULL, NULL, NULL, 'T', TO_DATE('2018-12-15', 'YYYY-MM-DD'), 'CE');
+    Projekt_InsertMitarbeiter('Schwarz','Felix',2600.00,TO_DATE('1988-04-19', 'YYYY-MM-DD'),TO_DATE('2020-06-30', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,25,'F_FL0003',
+    NULL, NULL, NULL, 'T', TO_DATE('2020-06-30', 'YYYY-MM-DD'), 'CE');
+    Projekt_InsertMitarbeiter('Jansen','Sabrina',2500.00,TO_DATE('1992-11-30', 'YYYY-MM-DD'),TO_DATE('2019-02-17', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,24,'F_FL0003',
+    NULL, NULL, NULL, 'T', TO_DATE('2019-02-17', 'YYYY-MM-DD'), 'CE');
+    Projekt_InsertMitarbeiter('Götz','Hans',2600.00,TO_DATE('1990-08-03', 'YYYY-MM-DD'),TO_DATE('2020-01-05', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,25,'F_FL0003',
+    NULL, NULL, NULL, 'T', TO_DATE('2020-01-05', 'YYYY-MM-DD'), 'CE');
+    
+    -- Mitarbeiter für Lager 4 (F_FL0004)
+    Projekt_InsertMitarbeiter('Huber','Nina',3500.00,TO_DATE('1985-11-10', 'YYYY-MM-DD'),TO_DATE('2021-08-01', 'YYYY-MM-DD'),'Führungskraft',40,28,'F_FL0004',
+    TO_DATE('2021-08-01', 'YYYY-MM-DD'), 'Verwalter Warenlager', 'F_FL0004');
+    Projekt_InsertMitarbeiter('Koch','Johanna',2500.00,TO_DATE('1990-06-30', 'YYYY-MM-DD'),TO_DATE('2017-02-17', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,24,'F_FL0004',
+    NULL, NULL, NULL, 'T', TO_DATE('2017-02-17', 'YYYY-MM-DD'), 'CE');
+    Projekt_InsertMitarbeiter('Richter','Tim',2600.00,TO_DATE('1989-09-18', 'YYYY-MM-DD'),TO_DATE('2020-08-01', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,25,'F_FL0004',
+    NULL, NULL, NULL, 'T', TO_DATE('2020-08-01', 'YYYY-MM-DD'), 'CE');
+    Projekt_InsertMitarbeiter('Zimmer','Lars',2500.00,TO_DATE('1992-07-12', 'YYYY-MM-DD'),TO_DATE('2019-11-08', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,24,'F_FL0004',
+    NULL, NULL, NULL, 'T', TO_DATE('2019-11-08', 'YYYY-MM-DD'), 'CE');
+    Projekt_InsertMitarbeiter('Schwarz','Gabi',2600.00,TO_DATE('1991-03-03', 'YYYY-MM-DD'),TO_DATE('2020-04-20', 'YYYY-MM-DD'),'Warenlagermitarbeiter',40,25,'F_FL0004',
+    NULL, NULL, NULL, 'T', TO_DATE('2020-04-20', 'YYYY-MM-DD'), 'CE');
+
 
     -- Einfügen von drei Leitern Warenlager
     Projekt_InsertMitarbeiter('Lange','Stefan',3500.00,TO_DATE('1985-07-10', 'YYYY-MM-DD'),TO_DATE('2021-06-01', 'YYYY-MM-DD'),'Führungskraft',40,28,'F_EL0001',
-    TO_DATE('2021-06-01', 'YYYY-MM-DD'), 'Leiter Warenlager');
-    
+    TO_DATE('2021-06-01', 'YYYY-MM-DD'), 'Leiter Warenlager', 'F_EL0001');
     Projekt_InsertMitarbeiter('Müller','Ingrid',3600.00,TO_DATE('1982-05-22', 'YYYY-MM-DD'),TO_DATE('2022-05-15', 'YYYY-MM-DD'),'Führungskraft',40,30,'F_EL0002',
-    TO_DATE('2022-05-15', 'YYYY-MM-DD'), 'Leiter Warenlager');
-    
+    TO_DATE('2022-05-15', 'YYYY-MM-DD'), 'Leiter Warenlager', 'F_EL0002');
     Projekt_InsertMitarbeiter('Neumann','Felix',3400.00,TO_DATE('1984-11-09', 'YYYY-MM-DD'),TO_DATE('2020-08-18', 'YYYY-MM-DD'),'Führungskraft',40,29,'F_EL0003',
-    TO_DATE('2020-08-18', 'YYYY-MM-DD'), 'Leiter Warenlager');
+    TO_DATE('2020-08-18', 'YYYY-MM-DD'), 'Leiter Warenlager', 'F_EL0003');
     
     -- Einfügen für die Geschäftsführer
     Projekt_InsertMitarbeiter('Schön','Gustav',7800.00,TO_DATE('1960-06-15', 'YYYY-MM-DD'),TO_DATE('1990-03-01', 'YYYY-MM-DD'),'Führungskraft',38.5,24,'F_HP0001',
-    TO_DATE('1990-03-01', 'YYYY-MM-DD'), 'Geschäftsführer');
+    TO_DATE('1990-03-01', 'YYYY-MM-DD'), 'Geschäftsführer', 'F_HP0001');
     Projekt_InsertMitarbeiter('Stramke','Lucas',7500.00,TO_DATE('1970-03-01', 'YYYY-MM-DD'),TO_DATE('2015-07-01', 'YYYY-MM-DD'),'Führungskraft',38.5,26,'F_HP0001',
     TO_DATE('2015-07-01', 'YYYY-MM-DD'), 'Technischer Geschäftsführer');
     Projekt_InsertMitarbeiter('Nguyen','Toni',7500.00,TO_DATE('1975-02-12', 'YYYY-MM-DD'),TO_DATE('2018-04-01', 'YYYY-MM-DD'),'Führungskraft',38.5,28,'F_HP0001',
     TO_DATE('2018-04-01', 'YYYY-MM-DD'), 'Kaufmännischer Geschäftsführer');
+
+    -- Leiter Einkauf 
+    Projekt_InsertMitarbeiter('Müller','Bernd',6900.00,TO_DATE('1955-03-22', 'YYYY-MM-DD'),TO_DATE('2000-06-01', 'YYYY-MM-DD'),'Führungskraft',40,30,'F_HP0001', 
+    TO_DATE('2000-06-01', 'YYYY-MM-DD'), 'Leiter Einkauf');
+    -- Verwaltungsmitarbeiter für Einkauf
+    Projekt_InsertMitarbeiter('Meier','Anna',3200.00,TO_DATE('1985-08-12', 'YYYY-MM-DD'),TO_DATE('2020-05-01', 'YYYY-MM-DD'),'Verwaltungsmitarbeiter',40,22,'F_HP0001');
+    Projekt_InsertMitarbeiter('Schmidt','Nina',3100.00,TO_DATE('1988-10-10', 'YYYY-MM-DD'),TO_DATE('2021-01-15', 'YYYY-MM-DD'),'Verwaltungsmitarbeiter',40,23,'F_HP0001');
+
+    -- Leiter Personal 
+    Projekt_InsertMitarbeiter('Weber','Svenja',6800.00,TO_DATE('1965-11-05', 'YYYY-MM-DD'),TO_DATE('2010-01-01', 'YYYY-MM-DD'),'Führungskraft',40,28,'F_HP0001',
+    TO_DATE('2010-01-01', 'YYYY-MM-DD'), 'Leiter Personal');
+    -- Verwaltungsmitarbeiter für Personal
+    Projekt_InsertMitarbeiter('Klein','Martin',3300.00,TO_DATE('1990-06-18', 'YYYY-MM-DD'),TO_DATE('2021-04-01', 'YYYY-MM-DD'),'Verwaltungsmitarbeiter',40,22,'F_HP0001');
+    Projekt_InsertMitarbeiter('Schulz','Lena',3100.00,TO_DATE('1993-01-09', 'YYYY-MM-DD'),TO_DATE('2020-10-01', 'YYYY-MM-DD'),'Verwaltungsmitarbeiter',40,23,'F_HP0001');
+
+    -- Leiter Marketing
+    Projekt_InsertMitarbeiter('Kaiser','Laura',6900.00,TO_DATE('1970-02-25', 'YYYY-MM-DD'),TO_DATE('2015-08-01', 'YYYY-MM-DD'),'Führungskraft',40,30,'F_HP0001', 
+    TO_DATE('2015-08-01', 'YYYY-MM-DD'), 'Leiter Marketing');
+    -- Verwaltungsmitarbeiter für Marketing
+    Projekt_InsertMitarbeiter('Fischer','Oliver',3400.00,TO_DATE('1992-03-19', 'YYYY-MM-DD'),TO_DATE('2021-05-10', 'YYYY-MM-DD'),'Verwaltungsmitarbeiter',40,22,'F_HP0001');
+    Projekt_InsertMitarbeiter('Lange','Simone',3300.00,TO_DATE('1989-06-10', 'YYYY-MM-DD'),TO_DATE('2021-03-30', 'YYYY-MM-DD'),'Verwaltungsmitarbeiter',40,23,'F_HP0001');
+
 
     COMMIT;
 END;

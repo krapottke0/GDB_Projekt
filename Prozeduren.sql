@@ -125,6 +125,7 @@ CREATE OR REPLACE PROCEDURE Projekt_InsertMitarbeiter(
     -- Zusätzliche Parameter für Führungskraft
     m_BDatum IN Projekt_Fuehrungskraft.BDatum%TYPE DEFAULT NULL,
     m_FEbene IN Projekt_Fuehrungskraft.FEbene%TYPE DEFAULT NULL,
+    m_Leitungsort IN Projekt_Firmenstandort.Leiter%TYPE DEFAULT NULL,
 
     -- Zusätzliche Parameter für Warenlagermitarbeiter
     m_GabelstaplerS IN Projekt_Warenlagermitarbeiter.GabelstaplerS%TYPE DEFAULT NULL,
@@ -148,6 +149,14 @@ BEGIN
         INSERT INTO Projekt_Fuehrungskraft (MitarbeiterID, BDatum, FEbene) 
         VALUES (v_MitarbeiterID, m_BDatum, m_FEbene);
         DBMS_OUTPUT.PUT_LINE('Führungskraft erfolgreich eingefügt.');
+        IF m_Leitungsort is not null THEN
+            UPDATE PROJEKT_FIRMENSTANDORT
+            Set LEITER = v_MitarbeiterID
+            where FIRMENSTANDORTID = m_Leitungsort;
+            DBMS_OUTPUT.PUT_LINE('Leitungsort erfolgreich aktualisiert.');
+        ELSE
+            DBMS_OUTPUT.PUT_LINE('Leitungsort nicht aktualisiert.');
+        END IF;
     ELSIF m_MitarbeiterRolle = 'Warenlagermitarbeiter' THEN
         INSERT INTO Projekt_Warenlagermitarbeiter (MitarbeiterID, GabelstaplerS, letzteUnterw, LkwS) 
         VALUES (v_MitarbeiterID, m_GabelstaplerS, m_letzteUnterw, m_LkwS);

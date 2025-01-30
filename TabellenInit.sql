@@ -31,7 +31,7 @@ create table Projekt_Mitarbeiter(
     ),
     WStunden decimal(4,2),
     KTage integer check(Ktage >= 0),
-    Arbeitsort varchar2(8) not null -- foreign key Definition am Ende
+    Arbeitsort varchar2(8) -- foreign key Definition am Ende
 );
 
 create table Projekt_Warenlagermitarbeiter(
