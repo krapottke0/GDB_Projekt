@@ -99,6 +99,9 @@ BEGIN
     
 END Projekt_InsertLieferung;
 
+------------------------------
+--Mitarbeiter einpflegen
+
 CREATE OR REPLACE PROCEDURE Projekt_InsertMitarbeiter(
     m_MitarbeiterNachname IN Projekt_Mitarbeiter.Nachname%TYPE,
     m_MitarbeiterVorname IN Projekt_Mitarbeiter.Vorname%TYPE,
