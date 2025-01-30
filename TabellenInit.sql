@@ -92,9 +92,10 @@ create table Projekt_Verkauf(
 create table Projekt_Liefert(
     ProduktID varchar2(8),
     ZuliefererID varchar2(8),
+    LieferDatum DATE check(LieferDatum >= TO_DATE('01.01.1990', 'DD.MM.YYYY')),
     Anzahl integer not null check(Anzahl > 0),
     PreisProStueck decimal(8, 2) not null check(PreisProStueck >= 0),
-    primary key (ProduktID, ZuliefererID),
+    primary key (ProduktID, ZuliefererID, LieferDatum),
     foreign key (ProduktID) references Projekt_Produkt,
     foreign key (ZuliefererID) references Projekt_Zulieferer
 );

@@ -81,14 +81,15 @@ END Projekt_InsertZulieferer;
 CREATE OR REPLACE PROCEDURE Projekt_InsertLieferung(
     l_ProduktID IN Projekt_Liefert.ProduktID%type,
     l_ZuliefererID IN Projekt_Liefert.ZuliefererID%type,
+    l_LieferDatum IN Projekt_Liefert.LieferDatum%type,
     l_Anzahl IN Projekt_Liefert.Anzahl%type,
     l_PreisProStueck IN Projekt_Liefert.PreisProStueck%type
 )
 IS
 BEGIN
     BEGIN
-        INSERT INTO PROJEKT_LIEFERT (PRODUKTID, ZuliefererID, ANZAHL, PREISPROSTUECK)
-        VALUES (l_ProduktID,l_ZuliefererID, l_Anzahl, l_PreisProStueck);
+        INSERT INTO PROJEKT_LIEFERT (PRODUKTID, ZuliefererID, LIEFERDATUM, ANZAHL, PREISPROSTUECK)
+        VALUES (l_ProduktID,l_ZuliefererID, l_LieferDatum, l_Anzahl, l_PreisProStueck);
         DBMS_OUTPUT.PUT_LINE('Lieferung erfolgreich eingefügt.');
         
     EXCEPTION
@@ -97,3 +98,22 @@ BEGIN
     END;
     
 END Projekt_InsertLieferung;
+
+CREATE OR REPLACE PROCEDURE Projekt_InsertMitarbeiter(
+    m_MitarbeiterNachname IN Projekt_Mitarbeiter.Nachname%TYPE,
+    m_MitarbeiterVorname IN Projekt_Mitarbeiter.Vorname%TYPE,
+    m_MitarbeiterGehalt IN Projekt_Mitarbeiter.Gehalt%TYPE,
+    m_MitarbeiterGebDatum IN Projekt_Mitarbeiter.GebDatum%TYPE,
+    m_MitarbeiterAnsDatum IN Projekt_Mitarbeiter.AnsDatum%TYPE,
+    m_MitarbeiterRolle IN Projekt_Mitarbeiter.Rolle%TYPE,
+    m_MitarbeiterWStunden IN Projekt_Mitarbeiter.WStunden%TYPE,
+    m_MitarbeiterKTage IN Projekt_Mitarbeiter.Ktage%TYPE,
+    m_MitarbeiterArbeitsort IN Projekt_Mitarbeiter.Arbeitsort%TYPE
+
+    
+)
+IS
+BEGIN
+
+END;
+END Projekt_InsertMitarbeiter;

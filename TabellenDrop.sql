@@ -2,6 +2,7 @@ drop SEQUENCE Projekt_seq_zulieferer_id;
 drop SEQUENCE Projekt_seq_produkt_id;
 drop PROCEDURE Projekt_InsertProdukt;
 drop PROCEDURE Projekt_InsertZulieferer;
+drop PROCEDURE Projekt_InsertLieferung;
 
 drop table Projekt_Beinhaltet cascade constraints;
 drop table Projekt_Liefert cascade constraints;
