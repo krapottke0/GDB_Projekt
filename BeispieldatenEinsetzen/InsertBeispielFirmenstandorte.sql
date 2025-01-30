@@ -69,13 +69,13 @@ insert into Projekt_Filiale (FirmenstandortID, Umsatz, Inventur, angWarenlager)
 values ('F_FI0001', 500000.00, 80.00, 'F_FL0001');
 
 insert into Projekt_Filiale (FirmenstandortID, Umsatz, Inventur, angWarenlager)
-values ('F_FI0002', 450000.00, 75.00, 'F_FL0001');
+values ('F_FI0002', 450000.00, 75.00, 'F_FL0002');
 
 insert into Projekt_Filiale (FirmenstandortID, Umsatz, Inventur, angWarenlager)
-values ('F_FI0003', 600000.00, 70.00, 'F_FL0001');
+values ('F_FI0003', 600000.00, 70.00, 'F_FL0003');
 
 insert into Projekt_Filiale (FirmenstandortID, Umsatz, Inventur, angWarenlager)
-values ('F_FI0004', 550000.00, 65.00, 'F_FL0001');
+values ('F_FI0004', 550000.00, 65.00, 'F_FL0004');
 
 commit;
 
