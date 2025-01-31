@@ -1,0 +1,25 @@
+"ARBEITSORT","ROLLE","Mitarbeiter Anzahl","DURSCHNITTSGEHALT"
+"F_EL0001","Führungskraft",1,3500
+"F_EL0001","Warenlagermitarbeiter",10,2310
+"F_EL0002","Führungskraft",1,3600
+"F_EL0002","Warenlagermitarbeiter",8,2388
+"F_EL0003","Führungskraft",1,3400
+"F_EL0003","Warenlagermitarbeiter",10,2410
+"F_FI0001","Filialmitarbeiter",9,2261
+"F_FI0001","Führungskraft",2,3650
+"F_FI0002","Filialmitarbeiter",9,2239
+"F_FI0002","Führungskraft",2,3900
+"F_FI0003","Filialmitarbeiter",7,2243
+"F_FI0003","Führungskraft",2,3850
+"F_FI0004","Filialmitarbeiter",8,2231
+"F_FI0004","Führungskraft",2,3700
+"F_FL0001","Führungskraft",1,3500
+"F_FL0001","Warenlagermitarbeiter",4,2550
+"F_FL0002","Führungskraft",1,3500
+"F_FL0002","Warenlagermitarbeiter",4,2550
+"F_FL0003","Führungskraft",1,3500
+"F_FL0003","Warenlagermitarbeiter",4,2550
+"F_FL0004","Führungskraft",1,3500
+"F_FL0004","Warenlagermitarbeiter",4,2550
+"F_HP0001","Führungskraft",6,7233
+"F_HP0001","Verwaltungsmitarbeiter",6,3233
