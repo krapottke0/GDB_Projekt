@@ -1,1 +1,20 @@
+CREATE OR REPLACE TRIGGER Projekt_trigger_BeforeInsertLagert
+BEFORE INSERT ON Projekt_Lagert
+FOR EACH ROW
+DECLARE
+    v_count INTEGER;
+BEGIN
+    SELECT COUNT(*)
+    INTO v_count
+    FROM Projekt_Lagert
+    WHERE LAGERORT = :NEW.LAGERORT AND PRODUKTID = :NEW.PRODUKTID AND REGALNR = :NEW.REGALNR;
 
+    IF v_count > 0 THEN
+        Projekt_UpdateLagertAutonomous(:NEW.PRODUKTID, :NEW.LAGERORT, :NEW.REGALNR, :NEW.ANZAHL);
+
+
+    END IF;
+END Projekt_trigger_BeforeInsertLagert;
+
+
+INSERT INTO PROJEKT_LAGERT (PRODUKTID, LAGERORT, ANZAHL, REGALNR) VALUES('P0000001', 'F_EL0001', 5, 'R1');

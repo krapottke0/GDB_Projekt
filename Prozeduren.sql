@@ -210,3 +210,21 @@ BEGIN
     COMMIT;
 END Projekt_InsertVerkauf;
 
+CREATE OR REPLACE PROCEDURE Projekt_UpdateLagertAutonomous(
+    p_PRODUKTID IN Projekt_Lagert.ProduktID%type,
+    p_LAGERORT IN Projekt_Lagert.LAGERORT%type,
+    p_REGALNR IN Projekt_Lagert.REGALNR%type,
+    p_ANZAHL IN Projekt_Lagert.ANZAHL%type
+)
+IS
+    PRAGMA AUTONOMOUS_TRANSACTION;
+BEGIN
+
+    UPDATE PROJEKT_LAGERT
+    SET Anzahl = Anzahl + p_ANZAHL
+    WHERE LAGERORT = p_LAGERORT
+      AND PRODUKTID = p_PRODUKTID
+      AND REGALNR = p_REGALNR;
+
+    COMMIT; 
+END Projekt_UpdateLagertAutonomous;
