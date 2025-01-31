@@ -1,7 +1,8 @@
 create view PROJEKT_VIEW_MITARBEITER AS
-select ARBEITSORT ,ROLLE, count(*) as "Mitarbeiter Anzahl", round(avg(GEHALT)) as Durschnittsgehalt
+select ARBEITSORT, ROLLE, count(*) as "Mitarbeiter Anzahl", round(avg(GEHALT)) as Durschnittsgehalt
 FROM PROJEKT_MITARBEITER
-group by ROLLE, ARBEITSORT;
+group by ROLLE, ARBEITSORT
+Order by ARBEITSORT;
 
 create view PROJEKT_VIEW_VERKAUF AS
 select VERKAUFSORT, sum(GESAMTPREIS) as Gesamtumsatz, count(*) as Verkäufe
