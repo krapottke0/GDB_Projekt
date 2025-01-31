@@ -5,6 +5,7 @@ drop PROCEDURE Projekt_InsertProdukt;
 drop PROCEDURE Projekt_InsertZulieferer;
 drop PROCEDURE Projekt_InsertLieferung;
 drop PROCEDURE Projekt_InsertMitarbeiter;
+drop PROCEDURE Projekt_InsertVerkauf;
 
 drop view PROJEKT_VIEW_LAGER;
 drop view Projekt_view_Mitarbeiter;

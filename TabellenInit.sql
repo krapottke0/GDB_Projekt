@@ -113,8 +113,8 @@ create table Projekt_Lagert(
     ProduktID varchar2(8),
     Lagerort varchar2(8),
     Anzahl integer not null check(Anzahl >= 0),
-    RegalNr varchar2(8) not null,
-    primary key (ProduktID, Lagerort),
+    RegalNr varchar2(8),
+    primary key (ProduktID, Lagerort, RegalNr),
     foreign key (ProduktID) references Projekt_Produkt,
     foreign key (Lagerort) references Projekt_Warenlager(FirmenstandortID)
 );

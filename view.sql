@@ -5,9 +5,13 @@ group by ROLLE, ARBEITSORT
 Order by ARBEITSORT;
 
 create view PROJEKT_VIEW_VERKAUF AS
-select VERKAUFSORT, sum(GESAMTPREIS) as Gesamtumsatz, count(*) as Verkäufe
+select 
+    VERKAUFSORT, 
+    sum(GESAMTPREIS) as Gesamtumsatz, 
+    count(*) as Verkäufe, AVG(Gesamtpreis) as "Durchscnittlicher Umsatz pro Verkauf",  
+    (SUM(GESAMTPREIS) / (SELECT SUM(GESAMTPREIS) FROM PROJEKT_VERKAUF)) * 100 AS "Prozentualer Gesamtanteil"
 FROM PROJEKT_VERKAUF
-group by VERKAUFSORT
+group by VERKAUFSORT;
 
 create view PROJEKT_VIEW_LAGER AS
 select P.PRODUKTNAME, sum(L.ANZAHL) as Bestand
