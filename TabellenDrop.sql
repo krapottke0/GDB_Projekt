@@ -6,6 +6,9 @@ drop PROCEDURE Projekt_InsertZulieferer;
 drop PROCEDURE Projekt_InsertLieferung;
 drop PROCEDURE Projekt_InsertMitarbeiter;
 
+drop view PROJEKT_VIEW_LAGER;
+drop view Projekt_view_Mitarbeiter;
+drop view PROJEKT_VIEW_VERKAUF;
 
 drop table Projekt_Beinhaltet cascade constraints;
 drop table Projekt_Liefert cascade constraints;
@@ -19,3 +22,4 @@ drop table Projekt_Warenlagermitarbeiter cascade constraints;
 drop table Projekt_Mitarbeiter cascade constraints;
 drop table Projekt_Zulieferer cascade constraints;
 drop table Projekt_Produkt cascade constraints;
+
