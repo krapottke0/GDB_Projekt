@@ -22,4 +22,3 @@ drop table Projekt_Warenlagermitarbeiter cascade constraints;
 drop table Projekt_Mitarbeiter cascade constraints;
 drop table Projekt_Zulieferer cascade constraints;
 drop table Projekt_Produkt cascade constraints;
-

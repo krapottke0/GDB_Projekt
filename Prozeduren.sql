@@ -164,3 +164,49 @@ BEGIN
     END IF;
 
 END Projekt_InsertMitarbeiter;
+
+------------------------------
+--Verkauf einfügen mit automatischem Beinhaltet Eintrag
+
+CREATE OR REPLACE PROCEDURE Projekt_InsertVerkauf(
+    p_VerkaufID IN Projekt_Verkauf.VerkaufID%TYPE,
+    p_ProduktID IN PROJEKT_PRODUKT.ProduktID%TYPE,
+    p_Anzahl IN Projekt_Beinhaltet.Anzahl%TYPE,
+    p_Verkaufsort IN Projekt_Firmenstandort.FIRMENSTANDORTID%TYPE
+) AS
+    v_VerkaufExistiert INTEGER;
+    v_Gesamtpreis Projekt_Verkauf.Gesamtpreis%TYPE;
+BEGIN
+    -- Prüfen, ob die VerkaufsID bereits existiert
+    SELECT COUNT(*)
+    INTO v_VerkaufExistiert
+    FROM Projekt_Verkauf
+    WHERE VerkaufID = p_VerkaufID;
+
+    IF v_VerkaufExistiert = 0 THEN
+        -- Wenn der Verkauf noch nicht existiert erzeuge Eintrag
+        INSERT INTO Projekt_Verkauf (VerkaufID, Zeitpunkt, Gesamtpreis, Verkaufsort) 
+        VALUES (p_VerkaufID, SYSDATE, 0, p_Verkaufsort);
+        DBMS_OUTPUT.PUT_LINE('Verkauf erfolgreich eingefügt.');
+    END IF;
+
+    -- Lege einen Eintrag in der Projekt_Beinhaltet-Tabelle an
+    INSERT INTO Projekt_Beinhaltet (VerkaufsID, ProduktID, Anzahl) 
+    VALUES (p_VerkaufID, p_ProduktID, p_Anzahl);
+    DBMS_OUTPUT.PUT_LINE('Beinhaltet erfolgreich eingefügt.');
+
+    -- Berechne Gesamtpreis neu
+    SELECT SUM(p.Preis * b.Anzahl)
+    INTO v_Gesamtpreis
+    FROM Projekt_Produkt p
+    JOIN Projekt_Beinhaltet b ON p.ProduktID = b.ProduktID
+    WHERE b.VerkaufsID = p_VerkaufID
+    GROUP BY b.VerkaufsID;
+
+    UPDATE Projekt_Verkauf
+    SET Gesamtpreis = v_Gesamtpreis
+    WHERE VerkaufID = p_VerkaufID;
+
+    COMMIT;
+END Projekt_InsertVerkauf;
+

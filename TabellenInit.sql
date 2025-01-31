@@ -84,7 +84,7 @@ create Table Projekt_Filiale(
 create table Projekt_Verkauf(
     VerkaufID varchar2(8) primary key,
     Zeitpunkt date not null,
-    Gesamtpreis decimal(12,2) not null check(GesamtPreis >= 0),
+    Gesamtpreis decimal(12,2) check(GesamtPreis >= 0),
     Verkaufsort varchar2(8) not null,
     foreign key (Verkaufsort) references Projekt_Filiale(FirmenstandortID)
 );
